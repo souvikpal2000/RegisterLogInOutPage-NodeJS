@@ -39,18 +39,8 @@ app.get("/secret", auth, async (req,res) => {
 });
 
 app.get("/logout", auth, async(req,res) => {
-    try{
-        const token = req.cookies.jwt;
-        const email = req.cookies.email;
-
-        // const verifyUser = jwt.verify(token, process.env.SECRET_KEY);
-        const userData = await User.findOne({ email:email });
-        const tokens = userData.tokens.filter((data) => data.token != token);
-        await User.updateOne({ tokens: tokens });
-        // console.log(tokens);     
-        
-        res.clearCookie("jwt"); 
-        res.clearCookie("email");      
+    try{    
+        res.clearCookie("jwt");    
         res.render("logout", {message:"Successfully Logged Out"});
     } catch (err) {
         res.status(500).send(err);
@@ -102,11 +92,10 @@ app.post("/login", async (req,res) => {
             const newToken = new Token({
                 token:token
             });
-            userData.tokens.push(newToken);
+            userData.tokens[0] = newToken;
             userData.save();
 
             res.cookie("jwt", token, { expires:new Date(Date.now() + 100000), httpOnly:true });
-            res.cookie("email", userData.email, { expires:new Date(Date.now() + 100000), httpOnly:true });
             return res.status(201).render("index");
         }
         res.render("login", {message: "Incorrect Password"});
