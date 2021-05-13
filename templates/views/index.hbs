@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    {{>headerLinks}}
+	 <title>Register</title>
+</head>
+<body>
+    {{>navbar}}
+   
+    <div class="register">
+			<div class="container">
+				<div class="mx-auto mb-3 message">
+					<h5>{{message}}</h5>
+				</div>
+				
+				<form method="POST" action="/">
+					<div class="form-group row">
+						<div class="col-12 col-md-6">
+							<div class="input-group mb-3">
+								<span class="input-group-text" id="inputGroup-sizing-default"><b>First Name</b></span>
+								<input type="text" name="firstName" id="firstName" class="form-control" aria-label="Sizing example input" required aria-describedby="inputGroup-sizing-default">
+							</div>
+						</div>
+	
+						<div class="col-12 col-md-6">
+							<div class="input-group mb-3">
+								<span class="input-group-text" id="inputGroup-sizing-default"><b>Last Name</b></span>
+                                <input type="text" name="lastName" id="lastName" class="form-control" aria-label="Sizing example input" required aria-describedby="inputGroup-sizing-default">
+							</div>		
+						</div>
+					</div>
+	
+					<div class="form-group row">
+						<div class="col-12 col-md-6">
+							<div class="input-group mb-3">
+								<span class="input-group-text" id="inputGroup-sizing-default"><b>Your Email</b></span>
+								<input type="email" name="email" id="email" class="form-control" aria-label="Sizing example input" required aria-describedby="inputGroup-sizing-default">
+							</div>
+						</div>
+	
+						<div class="col-12 col-md-6">
+							<div class="input-group mb-3">
+								<span class="input-group-text" id="inputGroup-sizing-default"><b>Gender</b></span>
+								<select name="gender" id="gender" class="form-control" id="exampleFormControlSelect2">
+									<option value="Male" selected>Male</option>
+									<option value="Female">Female</option>
+								</select>
+							</div>		
+						</div>
+					</div>
+	
+					<div class="form-group row">
+						<div class="col-12 col-md-6">
+							<div class="input-group mb-3">
+								<span class="input-group-text" id="inputGroup-sizing-default"><b>Your Phone</b></span>
+								<input type="number" name="phone" id="phone" class="form-control" aria-label="Sizing example input" required aria-describedby="inputGroup-sizing-default">
+							</div>
+						</div>
+	
+						<div class="col-12 col-md-6">
+							<div class="input-group mb-3">
+								<span class="input-group-text" id="inputGroup-sizing-default"><b>Your Age</b></span>
+                                <input type="number" name="age" id="age" class="form-control" aria-label="Sizing example input" required aria-describedby="inputGroup-sizing-default">
+							</div>		
+						</div>
+					</div>
+	
+					<div class="form-group row">
+						<div class="col-12 col-md-6">
+							<div class="input-group mb-3">
+								<span class="input-group-text" id="inputGroup-sizing-default"><b>Password</b></span>
+								<input type="password" name="password" id="password" class="form-control" aria-label="Sizing example input" required aria-describedby="inputGroup-sizing-default">
+							</div>
+						</div>
+	
+						<div class="col-12 col-md-6">
+							<div class="input-group mb-3">
+								<span class="input-group-text" id="inputGroup-sizing-default"><b>Confirm Password</b></span>
+                                <input type="password" name="conPassword" id="conPassword" class="form-control" aria-label="Sizing example input" required aria-describedby="inputGroup-sizing-default">
+							</div>		
+						</div>
+					</div>
+	
+						
+					<div class="form-group row">
+						<div class="col-md-10">
+							<button type="submit" class="btn btn-primary">Register</button>
+						</div>
+					</div>
+				</form>
+			</div>
+		</div>
+
+    {{>footer}}
+</body>
+{{>footerLinks}}
+</html>
